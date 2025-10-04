@@ -20,6 +20,7 @@ jobs:
         echo '<ls>'; ls -aFl
     - uses: actions/download-artifact@v4
       with:
-        name: out_cl_03-04.zip
+        name: out_cl_03-04
+        run-id: 18241559756
     - run: |
         echo '<ls>'; ls -aFl
