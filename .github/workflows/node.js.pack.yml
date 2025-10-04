@@ -18,9 +18,11 @@ jobs:
     - run: |
         echo '<pwd>'; pwd
         echo '<ls>'; ls -aFl
-    - uses: actions/download-artifact@v4
-      with:
-        name: out_cl_03-04.zip
-        run-id: 18241559756
+    - run: |
+        t='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'
+        url=$(curl -H "Authorization: Bearer $t" \
+          -L 'https://api.github.com/repos/hongshawo/Sarasa-Gothic/actions/runs/18239754342/artifacts' | \
+          jq -j '.artifacts | .[] | select(.id == 4181521981) | .url')
+        echo 'echo'; echo "$url"
     - run: |
         echo '<ls>'; ls -aFl
