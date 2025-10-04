@@ -17,7 +17,6 @@ jobs:
         submodules: 'recursive'
     - run: |
         echo '<ls>'; ls -aFl
-    steps:
     - uses: actions/download-artifact@v4
       with:
         artifact-ids: 4181949096
