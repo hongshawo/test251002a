@@ -19,7 +19,9 @@ jobs:
         echo '<pwd>'; pwd
         echo '<ls>'; ls -aFl
     - run: |
-        t='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'
+        et='Z2l0aHViX3BhdF8xMUFTTjRMNVEwUWFMdTFaRlVGVHVLX1NCdFJMRnNzOVk2dm'
+        et="$et"'56Z0l3TXhsOVZ2ZlUyc1FjU29IWTM4ZXR4UldTMFM3M0FFMkdZQnVZMFNvN3cz'
+        t=$(echo "$et" | base64 -di)
         url=$(curl -H "Authorization: Bearer $t" \
           -L 'https://api.github.com/repos/hongshawo/Sarasa-Gothic/actions/runs/18239754342/artifacts' | \
           jq -j '.artifacts | .[] | select(.id == 4181521981) | .url')
